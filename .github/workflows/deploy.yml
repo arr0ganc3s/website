@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          GITHUB_PAGES_CUSTOM_DOMAIN: "true"
 
       - name: Disable Jekyll
         run: touch out/.nojekyll
