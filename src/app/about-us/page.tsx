@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Learn about Lone Star Tech Solutions and our mission to bridge traditional business needs with modern technology.",
+    "Learn about Lone Star Labs and our mission to bridge traditional business needs with modern technology.",
 };
 
 const focusAreas = [
@@ -46,13 +46,13 @@ export default function AboutUs() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
-              About Lone Star Tech Solutions
+              About Lone Star Labs
             </p>
             <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
               A fresh, ambitious technology partner based in Texas.
             </h1>
             <p className="mt-6 text-base leading-relaxed text-[color:var(--color-ink-muted)]">
-              Welcome to Lone Star Tech Solutions, a modern technology service
+              Welcome to Lone Star Labs, a modern technology service
               provider based in League City, Texas. As a new player in the tech
               industry, we bring a unique blend of youthful energy and
               cutting-edge expertise to the table.
@@ -102,7 +102,7 @@ export default function AboutUs() {
             </div>
             <Image
               src="/images/brand-mark.png"
-              alt="Lone Star Tech Solutions mark"
+              alt="Lone Star Labs mark"
               width={84}
               height={84}
               className="hidden h-16 w-16 object-contain sm:block"

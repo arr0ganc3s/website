@@ -128,7 +128,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
-              Lone Star Tech Solutions
+              Lone Star Labs
             </p>
             <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
               Modern engineering for cloud, automation, and secure delivery.
@@ -362,7 +362,7 @@ export default function Home() {
             <div className="rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-8">
               <Image
                 src="/images/brand-mark.png"
-                alt="Lone Star Tech Solutions mark"
+                alt="Lone Star Labs mark"
                 width={120}
                 height={120}
                 className="h-24 w-24 object-contain"

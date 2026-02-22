@@ -19,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Lone Star Tech Solutions",
-    template: "%s | Lone Star Tech Solutions",
+    default: "Lone Star Labs",
+    template: "%s | Lone Star Labs",
   },
   description:
     "Empowering innovation through cloud, automation, QA, and modern software delivery.",
@@ -54,14 +54,14 @@ export default function RootLayout({
               <Link href="/" className="flex items-center gap-3">
                 <Image
                   src="/images/logo.png"
-                  alt="Lone Star Tech Solutions logo"
+                  alt="Lone Star Labs logo"
                   width={48}
                   height={48}
                   className="h-12 w-12 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-strong)] object-contain shadow-[0_14px_30px_-20px_var(--color-shadow)]"
                 />
                 <div>
                   <p className="font-display text-base font-semibold tracking-tight">
-                    Lone Star Tech Solutions
+                    Lone Star Labs
                   </p>
                   <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--color-ink-muted)]">
                     Innovate. Transform. Excel.

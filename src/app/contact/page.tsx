@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact us",
   description:
-    "Connect with Lone Star Tech Solutions to discuss cloud modernization, QA, automation, and custom software needs.",
+    "Connect with Lone Star Labs to discuss cloud modernization, QA, automation, and custom software needs.",
 };
 
 export default function Contact() {
@@ -19,7 +19,7 @@ export default function Contact() {
                 <div className="rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-6 shadow-[0_24px_60px_-50px_var(--color-shadow)]">
                   <Image
                     src="/images/brand-mark.png"
-                    alt="Lone Star Tech Solutions mark"
+                    alt="Lone Star Labs mark"
                     width={140}
                     height={140}
                     className="h-28 w-28 object-contain"
