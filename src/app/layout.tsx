@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
+import MobileNav from "@/components/MobileNav";
 import Starfield from "@/components/Starfield";
+import { navLinks, siteConfig } from "@/content/site";
 import "./globals.css";
 
 const plexSans = IBM_Plex_Sans({
@@ -19,12 +21,44 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Lone Star Labs",
-    template: "%s | Lone Star Labs",
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Empowering innovation through cloud, automation, QA, and modern software delivery.",
-  metadataBase: new URL("https://lstsolutions.net"),
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "/",
+  },
+  keywords: [
+    "cloud modernization",
+    "software testing",
+    "quality assurance",
+    "devops automation",
+    "kubernetes",
+    "terraform",
+    "custom software development",
+  ],
+  openGraph: {
+    type: "website",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/images/hero-nasa.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Satellite view of Earth from space",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: ["/images/hero-nasa.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +69,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plexSans.variable} ${spaceGrotesk.variable} antialiased`}>
+        <a className="skip-link" href="#main-content">
+          Skip to main content
+        </a>
         <Starfield />
         <div className="shooting-stars" aria-hidden="true">
           <span />
@@ -61,62 +98,51 @@ export default function RootLayout({
                 />
                 <div>
                   <p className="font-display text-base font-semibold tracking-tight">
-                    Lone Star Labs
+                    {siteConfig.name}
                   </p>
                   <p className="text-xs uppercase tracking-[0.32em] text-[color:var(--color-ink-muted)]">
-                    Innovate. Transform. Excel.
+                    {siteConfig.tagline}
                   </p>
                 </div>
               </Link>
               <nav className="hidden items-center gap-6 text-sm font-medium text-[color:var(--color-ink-muted)] md:flex">
-                <Link className="transition hover:text-white" href="/">
-                  Home
-                </Link>
+                {navLinks.map((link) => (
+                  <Link key={link.href} className="transition hover:text-white" href={link.href}>
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+              <div className="flex items-center gap-3">
                 <Link
-                  className="transition hover:text-white"
-                  href="/#services"
-                >
-                  Services
-                </Link>
-                <Link
-                  className="transition hover:text-white"
-                  href="/about-us"
-                >
-                  About us
-                </Link>
-                <Link
-                  className="transition hover:text-white"
+                  className="hidden items-center rounded-full bg-[color:var(--color-brand)] px-4 py-2 text-sm font-semibold text-[#041b1a] transition hover:bg-[color:var(--color-brand-dark)] md:flex"
                   href="/contact"
                 >
-                  Contact us
+                  Start a project
                 </Link>
-              </nav>
-              <Link
-                className="hidden items-center rounded-full bg-[color:var(--color-brand)] px-4 py-2 text-sm font-semibold text-[#041b1a] transition hover:bg-[color:var(--color-brand-dark)] md:flex"
-                href="/contact"
-              >
-                Start a project
-              </Link>
+                <MobileNav />
+              </div>
             </div>
           </header>
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <footer className="border-t border-[color:var(--color-border)] bg-[color:var(--color-surface-strong)]">
             <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.6fr_1fr_1fr]">
               <div>
                 <p className="font-display text-lg font-semibold">
-                  Lone Star Tech Solutions LLC
+                  {siteConfig.legalName}
                 </p>
                 <p className="mt-3 text-sm text-[color:var(--color-ink-muted)]">
                   Engineering cloud, automation, and secure delivery for teams
                   that need reliability at speed.
                 </p>
                 <div className="mt-6 space-y-2 text-sm">
-                  <p className="text-[color:var(--color-ink-muted)]">US: +1 (228) 249-7957</p>
+                  <p className="text-[color:var(--color-ink-muted)]">US: {siteConfig.phoneDisplay}</p>
                   <Link
                     className="text-[color:var(--color-brand)]"
-                    href="mailto:info@lstsolutions.net"
+                    href={siteConfig.emailHref}
                   >
-                    info@lstsolutions.net
+                    {siteConfig.email}
                   </Link>
                 </div>
               </div>
@@ -125,15 +151,11 @@ export default function RootLayout({
                   Useful Links
                 </p>
                 <div className="mt-4 flex flex-col gap-2 text-sm">
-                  <Link className="hover:text-white" href="/">
-                    Home
-                  </Link>
-                  <Link className="hover:text-white" href="/about-us">
-                    About us
-                  </Link>
-                  <Link className="hover:text-white" href="/contact">
-                    Contact us
-                  </Link>
+                  {navLinks.map((link) => (
+                    <Link key={link.href} className="hover:text-white" href={link.href}>
+                      {link.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
               <div>
@@ -141,14 +163,14 @@ export default function RootLayout({
                   Information
                 </p>
                 <p className="mt-4 text-sm text-[color:var(--color-ink-muted)]">
-                  Based in League City, Texas, serving teams globally with cloud
+                  Based in {siteConfig.location}, serving teams globally with cloud
                   modernization, QA, and secure delivery.
                 </p>
               </div>
             </div>
             <div className="border-t border-[color:var(--color-border)]">
               <p className="mx-auto max-w-6xl px-6 py-6 text-xs uppercase tracking-[0.3em] text-[color:var(--color-ink-muted)]">
-                Copyright © 2024 Lone Star Tech Solutions LLC. All rights
+                Copyright © {new Date().getFullYear()} {siteConfig.legalName}. All rights
                 reserved.
               </p>
             </div>

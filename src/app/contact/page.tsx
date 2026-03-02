@@ -1,11 +1,37 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/content/site";
+
+const contactDescription =
+  "Connect with Lone Star Labs to discuss cloud modernization, QA, automation, and custom software needs.";
 
 export const metadata: Metadata = {
   title: "Contact us",
-  description:
-    "Connect with Lone Star Labs to discuss cloud modernization, QA, automation, and custom software needs.",
+  description: contactDescription,
+  alternates: {
+    canonical: "/contact/",
+  },
+  openGraph: {
+    title: `Contact us | ${siteConfig.name}`,
+    description: contactDescription,
+    url: "/contact/",
+    type: "website",
+    images: [
+      {
+        url: "/images/dev-workstation.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Developer workstation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Contact us | ${siteConfig.name}`,
+    description: contactDescription,
+    images: ["/images/dev-workstation.jpg"],
+  },
 };
 
 export default function Contact() {
@@ -31,7 +57,7 @@ export default function Contact() {
                   Reach us directly
                 </p>
                 <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                  Reach us directly.
+                  Let&apos;s plan your next delivery.
                 </h1>
                 <p className="mt-6 text-base text-[color:var(--color-ink-muted)] sm:text-lg">
                   Call or email and we will respond quickly with next steps and
@@ -40,28 +66,28 @@ export default function Contact() {
                 <div className="mt-10 grid gap-8 text-base text-[color:var(--color-ink-muted)] sm:grid-cols-2">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.3em]">US</p>
-                    <p className="mt-2 text-2xl font-semibold text-white">+1 (228) 249-7957</p>
+                    <p className="mt-2 text-2xl font-semibold text-white">{siteConfig.phoneDisplay}</p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.3em]">Email</p>
                     <Link
                       className="mt-2 block text-2xl font-semibold text-white"
-                      href="mailto:info@lstsolutions.net"
+                      href={siteConfig.emailHref}
                     >
-                      info@lstsolutions.net
+                      {siteConfig.email}
                     </Link>
                   </div>
                 </div>
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Link
                     className="rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-[#041b1a] transition hover:bg-[color:var(--color-brand-dark)]"
-                    href="mailto:info@lstsolutions.net"
+                    href={siteConfig.emailHref}
                   >
                     Email us
                   </Link>
                   <Link
                     className="rounded-full border border-[color:var(--color-border)] px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
-                    href="tel:+12282497957"
+                    href={siteConfig.phoneHref}
                   >
                     Call the US line
                   </Link>

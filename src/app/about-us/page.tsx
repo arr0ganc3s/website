@@ -1,42 +1,39 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { edges, focusAreas } from "@/content/about";
+import { siteConfig } from "@/content/site";
+
+const aboutDescription =
+  "Learn about Lone Star Labs and our mission to bridge traditional business needs with modern technology.";
 
 export const metadata: Metadata = {
   title: "About us",
-  description:
-    "Learn about Lone Star Labs and our mission to bridge traditional business needs with modern technology.",
+  description: aboutDescription,
+  alternates: {
+    canonical: "/about-us/",
+  },
+  openGraph: {
+    title: `About us | ${siteConfig.name}`,
+    description: aboutDescription,
+    url: "/about-us/",
+    type: "website",
+    images: [
+      {
+        url: "/images/team-collab.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Engineering team collaborating",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `About us | ${siteConfig.name}`,
+    description: aboutDescription,
+    images: ["/images/team-collab.jpg"],
+  },
 };
-
-const focusAreas = [
-  {
-    title: "Development & Enhancements",
-    copy: "Customized solutions for open-source control and data plane development, SDN application/API work, and modern web/mobile platforms.",
-  },
-  {
-    title: "Testing Services",
-    copy: "Comprehensive software, penetration, and API testing to protect quality and security from the start.",
-  },
-  {
-    title: "Integration & Deployment",
-    copy: "Legacy modernization, cloud migration, and IoT/SDN integration for complex environments.",
-  },
-];
-
-const edges = [
-  {
-    title: "Technological prowess",
-    copy: "Expertise across Python, C, C++, Java, Go, and modern web technologies with deep cloud knowledge in AWS, Azure, and GCP.",
-  },
-  {
-    title: "Tailor-made delivery",
-    copy: "We design solutions around your business goals, aligning every sprint to measurable outcomes.",
-  },
-  {
-    title: "Commitment to excellence",
-    copy: "As a new company, our drive to make a significant impact is unmatched. We deliver with transparency and care.",
-  },
-];
 
 export default function AboutUs() {
   return (
@@ -46,7 +43,7 @@ export default function AboutUs() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
-              About Lone Star Labs
+              About {siteConfig.name}
             </p>
             <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
               A fresh, ambitious technology partner based in Texas.
@@ -171,7 +168,7 @@ export default function AboutUs() {
                 </Link>
                 <Link
                   className="rounded-full border border-[color:var(--color-border)] px-6 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
-                  href="mailto:info@lstsolutions.net"
+                  href={siteConfig.emailHref}
                 >
                   Email us
                 </Link>
