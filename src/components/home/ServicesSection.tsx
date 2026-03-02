@@ -24,19 +24,25 @@ export default function ServicesSection() {
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {services.map((service) => (
-            <div key={service.title} className="glass-panel rounded-3xl p-6">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="glass-panel group rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-brand)]/60"
+            >
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--color-surface-soft)]">
-                  <Image src={service.icon} alt="" width={28} height={28} />
+                  <Image src={service.icon} alt="" width={28} height={28} aria-hidden="true" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-white">
+                <h3 className="font-display text-lg font-semibold text-white group-hover:text-[color:var(--color-brand)]">
                   {service.title}
                 </h3>
               </div>
+              <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
+                Service area {String(index + 1).padStart(2, "0")}
+              </p>
               <ul className="mt-4 space-y-2 text-sm text-[color:var(--color-ink-muted)]">
                 {service.items.map((item) => (
-                  <li key={item} className="leading-relaxed">
+                  <li key={item} className="leading-relaxed before:mr-2 before:text-[color:var(--color-brand)] before:content-['-']">
                     {item}
                   </li>
                 ))}

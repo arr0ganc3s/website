@@ -8,7 +8,11 @@ export default function ReadySection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="glass-panel-strong grid gap-10 rounded-3xl p-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
+            <p className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[color:var(--color-ink-muted)]">
+              <span className="h-2 w-2 rounded-full bg-[color:var(--color-brand)]" />
+              Typical response within one business day
+            </p>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
               Ready to build
             </p>
             <h2 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">
@@ -32,6 +36,17 @@ export default function ReadySection() {
                 Email us
               </Link>
             </div>
+            <div className="mt-8 grid gap-3 text-sm text-[color:var(--color-ink-muted)] sm:grid-cols-3">
+              <p className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2">
+                Discovery call
+              </p>
+              <p className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2">
+                Scope alignment
+              </p>
+              <p className="rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-3 py-2">
+                Delivery roadmap
+              </p>
+            </div>
           </div>
           <div className="rounded-3xl border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] p-8">
             <Image
@@ -47,6 +62,9 @@ export default function ReadySection() {
             <Link className="text-lg font-semibold text-white" href={siteConfig.emailHref}>
               {siteConfig.email}
             </Link>
+            <p className="mt-6 text-xs uppercase tracking-[0.2em] text-[color:var(--color-ink-faint)]">
+              League City, Texas
+            </p>
           </div>
         </div>
       </div>
