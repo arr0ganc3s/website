@@ -1,3 +1,0 @@
-lstsolutions.net, www.lstsolutions.net {
-  reverse_proxy web:3000
-}
