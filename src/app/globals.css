@@ -249,6 +249,14 @@ img {
   max-width: 100%;
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] {
+  border-color: rgba(39, 209, 195, 0.55);
+}
+
 @keyframes fadeUp {
   0% {
     opacity: 0;

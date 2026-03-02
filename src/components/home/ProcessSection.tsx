@@ -17,7 +17,10 @@ export default function ProcessSection() {
           </p>
           <div className="mt-8 grid gap-4">
             {process.map((item) => (
-              <div key={item.step} className="glass-panel rounded-2xl p-4">
+              <div
+                key={item.step}
+                className="glass-panel rounded-2xl p-4 transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-brand)]/60"
+              >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full border border-[color:var(--color-border)] px-3 py-1 text-xs font-semibold text-[color:var(--color-ink-muted)]">
                     {item.step}
@@ -44,7 +47,7 @@ export default function ProcessSection() {
             {capabilityTags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-ink-muted)]"
+                className="rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-ink-muted)] transition duration-300 hover:border-[color:var(--color-brand)]/60 hover:text-white"
               >
                 {tag}
               </span>

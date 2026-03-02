@@ -18,18 +18,24 @@ export default function ShowcaseSection() {
           </p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {showcaseImages.map((image) => (
+          {showcaseImages.map((image, index) => (
             <div
               key={image.src}
-              className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-[color:var(--color-border)] shadow-[0_24px_70px_-50px_var(--color-shadow)]"
+              className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-[color:var(--color-border)] shadow-[0_24px_70px_-50px_var(--color-shadow)]"
             >
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover"
+                className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#04070f]/78 via-[#04070f]/25 to-transparent" />
+              <p className="absolute bottom-4 left-4 right-4 text-sm font-medium text-white/95">
+                {index === 0 && "Cross-functional engineering collaboration"}
+                {index === 1 && "Scalable infrastructure and platform operations"}
+                {index === 2 && "Modern delivery workstations and tooling"}
+              </p>
             </div>
           ))}
         </div>

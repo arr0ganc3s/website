@@ -9,8 +9,12 @@ export default function HeroSection() {
       <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[color:var(--color-glow)] blur-3xl" />
       <div className="absolute right-0 top-32 h-56 w-56 rounded-full bg-[color:var(--color-accent)]/20 blur-3xl" />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
+        <div className="animate-fade-up">
+          <p className="inline-flex items-center gap-2 rounded-full border border-[color:var(--color-border)] bg-[color:var(--color-surface-soft)] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[color:var(--color-ink-muted)]">
+            <span className="h-2 w-2 rounded-full bg-[color:var(--color-brand)]" />
+            Accepting New Modernization Partners
+          </p>
+          <p className="mt-5 text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
             {siteConfig.name}
           </p>
           <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
@@ -37,7 +41,10 @@ export default function HeroSection() {
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {highlights.map((item) => (
-              <div key={item.title} className="glass-panel rounded-2xl p-4">
+              <div
+                key={item.title}
+                className="glass-panel rounded-2xl p-4 transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-brand)]/60"
+              >
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[color:var(--color-ink-muted)]">
                   {item.title}
                 </p>
@@ -48,13 +55,13 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
-        <div className="relative">
+        <div className="relative animate-fade-up-delay">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-[color:var(--color-border)] shadow-[0_30px_80px_-60px_var(--color-shadow)]">
             <Image
               src="/images/hero-nasa.jpg"
               alt="Satellite view of Earth from space"
               fill
-              className="object-cover"
+              className="object-cover transition duration-700 hover:scale-[1.03]"
               sizes="(max-width: 1024px) 100vw, 42vw"
               priority
             />
