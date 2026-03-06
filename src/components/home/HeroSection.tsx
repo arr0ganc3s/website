@@ -18,7 +18,7 @@ export default function HeroSection() {
             {siteConfig.name}
           </p>
           <h1 className="terminal-title mt-4 text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Modern engineering in terminal mode: precise, observable, and fast.
+            Modern engineering: precise, observable, and fast.
           </h1>
           <p className="mt-6 text-base leading-relaxed text-[color:var(--color-ink-muted)] sm:text-lg">
             We bridge traditional business needs with modern technology, helping
