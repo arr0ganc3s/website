@@ -6,10 +6,10 @@ export default function ShowcaseSection() {
     <section className="py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--color-ink-muted)]">
+          <p className="terminal-kicker">
             Tailored Solutions and Exceptional Support
           </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">
+          <h2 className="terminal-title mt-3 text-3xl sm:text-4xl">
             Built for ambitious teams with complex systems.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-[color:var(--color-ink-muted)] sm:text-base">
@@ -21,7 +21,7 @@ export default function ShowcaseSection() {
           {showcaseImages.map((image, index) => (
             <div
               key={image.src}
-              className="group relative aspect-[4/3] overflow-hidden rounded-3xl border border-[color:var(--color-border)] shadow-[0_24px_70px_-50px_var(--color-shadow)]"
+              className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-[color:var(--color-border)] shadow-[0_24px_70px_-50px_var(--color-shadow)]"
             >
               <Image
                 src={image.src}
@@ -30,7 +30,7 @@ export default function ShowcaseSection() {
                 className="object-cover transition duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#04070f]/78 via-[#04070f]/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020b08]/82 via-[#020b08]/28 to-transparent" />
               <p className="absolute bottom-4 left-4 right-4 text-sm font-medium text-white/95">
                 {index === 0 && "Cross-functional engineering collaboration"}
                 {index === 1 && "Scalable infrastructure and platform operations"}

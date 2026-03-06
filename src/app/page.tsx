@@ -6,7 +6,6 @@ import ProcessSection from "@/components/home/ProcessSection";
 import ReadySection from "@/components/home/ReadySection";
 import ServicesSection from "@/components/home/ServicesSection";
 import ShowcaseSection from "@/components/home/ShowcaseSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <ServicesSection />
       <CaseSnapshotsSection />
       <ProcessSection />
-      <TestimonialsSection />
       <FaqSection />
       <ReadySection />
     </div>
