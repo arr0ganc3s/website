@@ -72,6 +72,7 @@ export default function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
+        <div className="mesh-gradient" aria-hidden="true" />
         <Starfield />
         <div className="shooting-stars" aria-hidden="true">
           <span />

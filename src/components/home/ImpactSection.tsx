@@ -23,10 +23,10 @@ export default function ImpactSection() {
             {impactMetrics.map((metric, index) => (
               <article
                 key={metric.label}
-                className="glass-panel rounded-xl p-5 transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-brand)]/60"
+                className="reveal-on-scroll glass-panel rounded-xl p-5 transition duration-300 hover:-translate-y-1 hover:border-[color:var(--color-brand)]/60"
                 style={{ animationDelay: `${index * 90}ms` }}
               >
-                <p className="font-display text-3xl font-semibold text-[color:var(--color-brand)]">{metric.value}</p>
+                <p className="text-gradient font-display text-4xl font-semibold">{metric.value}</p>
                 <p className="mt-2 terminal-kicker">
                   {metric.label}
                 </p>

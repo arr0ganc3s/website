@@ -6,15 +6,17 @@ import { siteConfig } from "@/content/site";
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[color:var(--color-glow)] blur-3xl" />
-      <div className="absolute right-0 top-32 h-56 w-56 rounded-full bg-[color:var(--color-accent)]/16 blur-3xl" />
+      <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[color:var(--color-glow)] blur-3xl animate-float-glow" />
+      <div className="absolute right-0 top-32 h-56 w-56 rounded-full bg-[color:var(--color-accent)]/24 blur-3xl animate-float-glow" />
+      <div className="pointer-events-none absolute left-1/3 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[color:var(--color-brand)]/10 blur-3xl" />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-[1.06fr_0.94fr]">
         <div className="animate-fade-up">
           <p className="terminal-kicker">
             {siteConfig.name}
           </p>
-          <h1 className="terminal-title mt-4 text-4xl leading-tight sm:text-5xl lg:text-6xl">
-            Modern engineering: precise, observable, and fast.
+          <h1 className="hero-display mt-4">
+            <span className="text-gradient">Modern engineering</span>
+            <span className="text-[color:var(--color-ink)]">: precise, observable, and fast.</span>
           </h1>
           <p className="mt-6 text-base leading-relaxed text-[color:var(--color-ink-muted)] sm:text-lg">
             We bridge traditional business needs with modern technology, helping
