@@ -10,11 +10,7 @@ export default function HeroSection() {
       <div className="absolute right-0 top-32 h-56 w-56 rounded-full bg-[color:var(--color-accent)]/16 blur-3xl" />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 lg:grid-cols-[1.06fr_0.94fr]">
         <div className="animate-fade-up">
-          <p className="terminal-command">
-            <span className="terminal-dot" />
-            now accepting modernization partners
-          </p>
-          <p className="mt-5 terminal-kicker">
+          <p className="terminal-kicker">
             {siteConfig.name}
           </p>
           <h1 className="terminal-title mt-4 text-4xl leading-tight sm:text-5xl lg:text-6xl">
