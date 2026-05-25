@@ -472,6 +472,13 @@ details[open] {
     border-color: rgba(115, 222, 255, 0.5);
     color: var(--color-accent);
   }
+  .terminal-button-primary:focus-visible,
+  .terminal-button-secondary:focus-visible,
+  .terminal-chip:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(115, 222, 255, 0.32);
+  }
   .animate-fade-up {
     animation: fadeUp 0.8s ease-out both;
   }

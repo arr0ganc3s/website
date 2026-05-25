@@ -44,7 +44,7 @@ export default function HeroSection() {
         <div className="relative animate-fade-up-delay">
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-[color:var(--color-border)] shadow-[0_30px_80px_-60px_var(--color-shadow)]">
             <Image
-              src="/images/hero-nasa.jpg"
+              src="/images/hero-nasa.webp"
               alt="Satellite view of Earth from space"
               fill
               className="object-cover transition duration-700 hover:scale-[1.03]"
